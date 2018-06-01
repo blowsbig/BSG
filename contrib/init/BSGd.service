@@ -1,0 +1,26 @@
+[Unit]
+Description=MRQ's distributed currency daemon
+After=network.target
+
+[Service]
+User=BSG
+Group=BSG
+
+Type=forking
+PIDFile=/var/lib/BSGd/BSGd.pid
+
+ExecStart=/usr/bin/BSGd -daemon -pid=/var/lib/BSGd/BSGd.pid \
+          -conf=/etc/BSG/BSG.conf -datadir=/var/lib/BSGd
+
+ExecStop=-/usr/bin/BSG-cli -conf=/etc/BSG/BSG.conf \
+         -datadir=/var/lib/BSGd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

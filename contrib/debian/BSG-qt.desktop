@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=BSG
+Comment=BSG P2P Cryptocurrency
+Comment[fr]=BSG, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=BSG, eşten eşe kriptografik sanal para birimi
+Exec=BSG-qt %u
+Terminal=false
+Type=Application
+Icon=BSG128
+MimeType=x-scheme-handler/BSG;
+Categories=Office;Finance;
